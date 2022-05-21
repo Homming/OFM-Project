@@ -20,7 +20,11 @@ export class UsersService {
         return this.userRepository.save(createUserDto)
     }
 
-    async findOne(email: string) {
+    async findOne(id: number) {
+        return this.userRepository.findOne({ id });
+    }
+
+    async findOneEmail(email: string) {
         return this.userRepository.findOne({ email });
     }
 
